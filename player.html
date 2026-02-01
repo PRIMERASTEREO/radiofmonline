@@ -8,43 +8,52 @@
     <script src="./player/js/jquery-3.2.1.min.js"></script>
 	<script src="./player/js/lunaradio.js"></script>
 </div>
-<div id="lunaradio" style="width:100%;height:100%;position:absolute;left:0px;top:0px;z-index:300;overflow:hidden;display:block">PRIMERA STEREO Radio1 Online</div>			
+<div id="player" style="width:100%;height:100%;position:absolute;left:0px;top:0px;z-index:300;overflow:hidden;display:block">PRIMERA STEREO Radio1 Online</div>			
 
+<script src="lunaradio-animado.js"></script>
 <script>
-$("#lunaradio").lunaradio({
+$("#player").lunaradio({
+itunestoken: "1000lIPN",
+streamurl: "https://primerastereo.stream.laut.fm/", 
+radioname: "PRIMERA STEREO RADIO ONLINE", 
+coverimage: "favicon.png", 
+onlycoverimage: false, 
 userinterface: "big", 
-			backgroundcolor: "000000",
-			fontcolor: "#ffffff",
-			hightlightcolor: "#067dcc", 
-			fontname: "Space Grotesk", 
-			googlefont: "Space Grotesk", 
-			fontratio: "0.4", 
-			radioname: "PRIMERA STEREO Radio Online", 
-			coverimage: "./images/NewLogo-Primera.png",
-			onlycoverimage: "false", //true para mostrar solo logo radio
-			coverstyle: "animated",
-			usevisualizer: "real", 
-			visualizertype: "7",
-			multicolorvisualizer: "true",
-        color1: "#e66c35",
-        color2: "#d04345",
-        color3: "#85a752",
-        color4: "#067dcc",
-			visualizeropacity: "3.0",			
-			itunestoken: "1000lIPN", 
-			metadatatechnic: "corsproxy", 
-			ownmetadataurl: "", 
-			corsproxy: "",
-			usestreamcorsproxy: "true",
-			streamurl: "https://usa7.fastcast4u.com/proxy/primerastereo", 
-			streamtype: "shoutcast2", 
-			shoutcastpath: "/stream", 
-		    shoutcastid: "1",
-			metadatainterval: "5000", 
-			volume: "13",
-			autoplay: "true",
-			debug: "true",
-			itunestoken: "1000lIPN",
+backgroundcolor: "", 
+fontcolor: "#ffffff", 
+hightlightcolor: "#0e60b8", 
+fontname: "Roboto", 
+googlefont: "Roboto", 
+fontratio: "0.4", 
+scroll: "true",
+scrollradioname: "left",
+scrolltitle: "left",
+scrollradionamespeed: "0.25",
+scrolltitlespeed: "0.25", 
+coverstyle: "animated", 
+usevisualizer: "real", 
+visualizertype: "7",
+multicolorvisualizer: "true",
+color1: "#f8fc03",
+color2: "#032cfc",
+color3: "#032cfc",
+color4: "#fc0303",
+visualizeropacity: "5.0",
+visualizerghost: "5.0",
+visualizerblur: "5",
+visualizerghostblur: "5",
+metadatatechnic: "ownmetadataurl", //fallback (usar para zeno)
+ownmetadataurl: "https://api.laut.fm/station/primerastereo/current_song.txt",
+streamtype: "icecast2",
+icecastmountpoint: "/primerastereo",	
+shoutcastpath: "", 
+shoutcastid: "1", 
+metadatainterval: "5000",
+volume: "25",
+autoplay: "true",
+displayliveicon: "true",
+usestreamcorsproxy: "false",
+corsproxy: "",
 });
 </script>
 
@@ -52,5 +61,6 @@ userinterface: "big",
 </body>
 
 </html>
+
 
 
